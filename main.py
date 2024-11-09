@@ -4,7 +4,6 @@ def lire_invite():
         if texte.lower() == "exit":
             print("Programme terminé.")
             break
-        else:
-            print(f"Tu as écrit : {texte}")
+        print(f"Tu as écrit : {texte}")
 
 lire_invite()
