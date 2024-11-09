@@ -105,12 +105,14 @@ bibliotheque = Bibliotheque()
 bibliotheque.ajouter_livre("Le Petit Prince", "Antoine de Saint-Exupéry", "Roman", 1943)
 bibliotheque.ajouter_livre("1984", "George Orwell", "Science-fiction", 1949)
 bibliotheque.ajouter_livre("Python pour les nuls", "Marcia Hall", "Programmation", 2020)
+bibliotheque.ajouter_livre("ESSAI DE MERDE", "FRANCAIS", "PECRITURE", 2034)
 
 # Affichage de la collection
 bibliotheque.afficher_collection()
 
 # Emprunter un livre
 bibliotheque.emprunter_livre("1984")
+bibliotheque.emprunter_livre("ESSAI DE MERDE")
 
 # Rechercher un livre
 bibliotheque.rechercher_par_titre("Python")
