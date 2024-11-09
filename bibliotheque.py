@@ -31,13 +31,15 @@ class Livre:
             self.emprunte = False
             duree_emprunt = (datetime.now() - self.date_emprunt).days
             self.date_emprunt = None
-            print(f"Le livre '{self.titre}' a été retourné. Durée d'emprunt : {duree_emprunt} jours.")
+            print(f"Le livre '{self.titre}' a été retourné. "
+                  f"Durée d'emprunt : {duree_emprunt} jours.")
         else:
             print(f"Le livre '{self.titre}' n'est pas actuellement emprunté.")
 
     def __str__(self):
         status = "emprunté" if self.emprunte else "disponible"
-        return f"{self.titre} par {self.auteur} ({self.annee}) - {self.categorie} - {status}"
+        return (f"{self.titre} par {self.auteur} ({self.annee}) - "
+                f"{self.categorie} - {status}")
 
 
 class Bibliotheque:
@@ -64,7 +66,8 @@ class Bibliotheque:
 
     def lister_par_categorie(self, categorie):
         """Affiche les livres d'une certaine catégorie."""
-        resultats = [livre for livre in self.collection if livre.categorie.lower() == categorie.lower()]
+        resultats = [livre for livre in self.collection
+                     if livre.categorie.lower() == categorie.lower()]
         if resultats:
             print(f"Livres dans la catégorie '{categorie}' :")
             for livre in resultats:
@@ -105,14 +108,12 @@ bibliotheque = Bibliotheque()
 bibliotheque.ajouter_livre("Le Petit Prince", "Antoine de Saint-Exupéry", "Roman", 1943)
 bibliotheque.ajouter_livre("1984", "George Orwell", "Science-fiction", 1949)
 bibliotheque.ajouter_livre("Python pour les nuls", "Marcia Hall", "Programmation", 2020)
-bibliotheque.ajouter_livre("ESSAI DE MERDE", "FRANCAIS", "PECRITURE", 2034)
 
 # Affichage de la collection
 bibliotheque.afficher_collection()
 
 # Emprunter un livre
 bibliotheque.emprunter_livre("1984")
-bibliotheque.emprunter_livre("ESSAI DE MERDE")
 
 # Rechercher un livre
 bibliotheque.rechercher_par_titre("Python")
